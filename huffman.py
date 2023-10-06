@@ -104,7 +104,9 @@ class HuffmanCode:
 def main():
     test1 = HuffmanCode(["the", "and", "sh", "th", "e "])
     file = open("original.txt", "r")
-    originalText = file.read()
+    originalText = file.read().lower()
+    print(len(originalText))
+    print(len(originalText)*6)
     test1.getFrequency(originalText)
     test1.sortDict()
     test1.assignHuffman()
@@ -117,6 +119,7 @@ def main():
     file.close()
     file = open("huffman.txt", "r")
     huff = file.read()
+    print(len(huff))
     file.close()
     file = open("decoded.txt", "w")
     test1.decode(file, huff)
